@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Bebas+Neue&family=Calligraffitti&family=Dancing+Script&family=EB+Garamond:ital@0;1&family=Monoton&family=Petit+Formal+Script&family=Quicksand:wght@300&family=Rock+Salt&display=swap');
+:root {
+  --primary-color: #498f84;
+}
+
+/* BASIC CSS RESET */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.3;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* UTILITIES */
+
+.container {
+  width: 85%;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  padding: 10px 25px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 8px;
+  font-size: 18px;
+  opacity: 1;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+/* HEADER */
+
+.logo, .logo a {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  margin-right:auto;
+}
+
+.header-bottom {
+  background-color: var(--primary-color);
+}
+
+.header-bottom.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  opacity: 0.98;
+  transition: all 0.4s ease;
+}
+
+.header-bottom.fixed a {
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.nav-list a {
+  color: #fff;
+  font-size: 20px;
+  display: block;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  background-color: #fff;
+  color: #333;
+}
+
+.nav-list::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* SECTIONS */
+
+.section-title {
+  display: inline-block;
+  margin: 45px 0;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.section-title,
+.section-title + span {
+  font-size: 40px;
+}
+
+.section-title:before {
+  content: "";
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  width: 140%;
+  border-bottom: 4px solid var(--primary-color);
+  transform: skew(35deg);
+}
+
+.news,
+.services {
+  text-align: center;
+}
+
+/* SECTION SHOWCASE */
+
+section.showcase {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2) ), url("https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1875&q=80") no-repeat;
+  background-position: center;
+  background-size: 100%, 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+section.showcase h1,
+section.showcase h2 {
+  margin: 10px 0;
+}
+
+.showcase h1 {
+  font-size: 100px;
+  font-family: "Poppins", sans-serif;
+
+}
+
+.showcase h2 {
+  font-size: 80px;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* ABOUT SECTION*/
+
+.welcome, .about, {
+  height: 450px;
+  position: relative;
+}
+
+.about-text p {
+  font-size: 22px;
+  margin: 30px 0;
+}
+
+/* SERVICES SECTION AND NEWS */
+
+.services,
+.news {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.service-cards,
+.news-cards {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 50px;
+}
+
+.mendline,{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.service-cards .card,
+.news-cards .card, .mendline {
+  box-shadow: 0 10px 10px -5px #ccc;
+  position: relative;
+}
+
+.service-cards p, .mendline p {
+   font-size: 22px;
+  padding: 30 px;
+  
+}
+
+.service-cards i, .mendline i {
+  font-size: 5em;
+  color:#333;
+  padding: 20px;
+}
+
+.service-cards .card-title, .mendline .card-title{
+  font-size: 25px;
+  padding: 15px;
+}
+
+.news-cards .card-description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 15px;
+  font-size: 20px;
+  width: 100%;
+  max-height: 40%;
+}
+
+.news-cards .card-description p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden
+}
+
+.news-cards .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+.news-cards .card-overlay btn {
+  font-size: 25px;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.news-cards :hover .card-overlay {
+  opacity: 0.78;
+}
+
+.news-cards .card:hover .card-description {
+  display: none;
+}
+
+
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 8px 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.scroll-to-top-btn.show {
+  visibility: visible;
+  animation: slide-in 0.4s;
+}
+
+
+  .showcase h2 {
+    font-size: 50px;
+  }
+
+  .showcase h1 {
+    font-size: 80px;
+    font-weight: bold;
+  }
+
+  .about{
+    height: auto;
+  }
+
+  .about .container {
+    grid-gap: 5px;
+    grid-template-columns: 1fr;
+  }
+
+  .about-text, .documentation-text {
+    order: -1;
+  }
+
+  .news-cards .card-description {
+    font-size: 18px;
+  }
+
+  .footer-top .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .section-title {
+    margin: 35px 0;
+  }
+
+  .section-title,
+  .section-title + span {
+    font-size: 28px;
+  }
+
+  .header-bottom .nav-list {
+    width: 80%;
+  }
+
+  .header-bottom .nav-list a {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .showcase h2 {
+    font-size: 30px;
+  }
+
+  .showcase h1 {
+    font-size: 50px;
+  }
+
+  .about-text p, .documentation-text p{
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+/* ANIMATIONS */
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
